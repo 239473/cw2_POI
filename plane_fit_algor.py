@@ -33,7 +33,7 @@ def generate_cylinder(nr_points:int=5000, r=50, h=200, move=0):
 if __name__=='__main__':
     cylinder_points = generate_cylinder(1000)
     cloud1_points = generate_points(1000, 0, 100, 0, 100, 0, 1, 300)
-    cloud2_points = generate_points(1000, 0, 100, 0, 100, 0, 1, -400)
+    cloud2_points = generate_points(1000, 0, 1, 0, 100, 0, 100, -400)
     with open('pointsdata.xyz','w',encoding='utf-8',newline='\n') as csvfile:
         csvwriter=writer(csvfile)
         #csvwriter.writerow('x','x','z')
