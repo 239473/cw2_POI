@@ -27,6 +27,16 @@ red=y_pred==0
 blue=y_pred==1
 cyan=y_pred==2
 
+import matplotlib.pyplot as plt
+
+fig=plt.figure()
+ax=fig.add_subplot(111, projection='3d')
+ax.scatter(X[red,0],X[red,1],X[red,2],c='r')
+ax.scatter(X[blue,0],X[blue,1],X[blue,2],c='b')
+ax.scatter(X[cyan,0],X[cyan,1],X[cyan,2],c='c')
+plt.show()
+
+
 r=[]
 b=[]
 c=[]
