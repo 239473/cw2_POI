@@ -11,10 +11,13 @@ def read_csv(name,nl="\n",dl=","):
             cloud.append([float(xx), float(yy), float(zz)])
     return cloud
 
-cloud=numpy.array(read_csv("cloud_r.xyz"))
+if __name__=="__main__":
 
-plane=pyransac3d.Plane()
-best_eq, best_inliers=plane.fit(cloud, tresh=0.01, minPoints=100, maxIteration=1000)
+    cloud=numpy.array(read_csv("LidarData.xyz"))
 
-print(f'best euation Ax+By+Cz+D:{best_eq}')
-print(f'best inliers:{best_inliers}')
+    plane=pyransac3d.Plane()
+    best_eq, best_inliers=plane.fit(cloud, thresh=0.01, minPoints=100, maxIteration=1000)
+
+    print(f'best euation Ax+By+Cz+D:{best_eq}')
+    print(f'best inliers:{best_inliers}')
+
